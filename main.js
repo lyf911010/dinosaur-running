@@ -1,11 +1,5 @@
-const app = new PIXI.Application({
-  width: window.innerWidth,
-  height: window.innerHeight,
-  backgroundColor: 0xffffff,
-  resolution: window.devicePixelRatio || 1,
-  antialias: true
-})
-document.body.appendChild(app.view)
+import * as PIXI from 'pixi.js'
+import app from './src/app'
 
 const container = new PIXI.Container()
 app.stage.addChild(container)

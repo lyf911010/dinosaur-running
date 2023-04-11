@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "vite",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "pixi.js": "^7.2.4"
+    "pixi.js": "^7.2.4",
+    "vite": "^4.2.1"
   }
 }
