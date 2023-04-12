@@ -49,6 +49,7 @@ const afterInit = () => {
   startText.eventMode = 'static'
   startText.on('click', () => {
     playGame()
+    startText.visible = false
   })
 
   app.ticker.add(() => {
@@ -83,7 +84,7 @@ const afterInit = () => {
   })
   
   window.addEventListener('keydown', e => {
-    if (e.code === 'Space') {
+    if (e.code === 'Space' && !jumpSprite.visible) {
       runAnimation.visible = false
       jumpSprite.visible = true
       jumpV = 20
@@ -93,6 +94,7 @@ const afterInit = () => {
 
 const playGame = () => {
   isGameing = true
+  isGameOver = false
   runAnimation.visible = true
   runAnimation.x = 60 
   runAnimation.y = window.innerHeight - 80 - 90
@@ -102,6 +104,9 @@ const gameOver = () => {
   isGameing = false
   isGameOver = true
   runAnimation.visible = false
+  startText.visible = true
+  cactusSprite.x = window.innerWidth / 2
+  cactusSprite.y = window.innerHeight - 80 - 70
   alert(`得分${score}`)
 }
 
